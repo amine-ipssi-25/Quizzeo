@@ -9,7 +9,6 @@ h1 {
 }
 
 @keyframes couleur {
-    
     0% { color: rgb(125, 85, 255) }
     33% { color: rgb(255, 85, 85) }
     66% { color:rgb(255, 218, 85) }

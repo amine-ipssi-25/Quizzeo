@@ -11,6 +11,7 @@
 <div class="jeu_quiz">
 <?php
 $quizSelectionne = $_GET['quiz'];
+$user = $_SESSION['id'];
 
 $quizDataFile = fopen("../traitement/quiz_data.csv", "r");
 
@@ -72,7 +73,6 @@ if ($quizDataFile) {
                     if ($questionsFile) {
                         fgetcsv($questionsFile);
                         while (($questionsData = fgetcsv($questionsFile)) !== false) {
-
                             if ($reponsesFile) {
                                 fgetcsv($reponsesFile);
 
@@ -136,7 +136,3 @@ if ($quizDataFile) {
 </div>
 </body>
 </html>
-  
-
-
-

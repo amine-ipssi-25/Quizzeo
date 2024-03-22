@@ -6,7 +6,7 @@ if(isset($_SESSION['admin']))
     {
         $user_id = $_POST['id'];
         $file_name = '../traitement/users.csv';
-        $file_open = fopen($file_name, 'r+');
+        $file_open = fopen($file_name, 'r');
 
         $updatedLines = [];
 
@@ -131,19 +131,13 @@ if(isset($_SESSION['admin']))
 
             while (($line_quiz = fgetcsv($file_open_quiz)) !== FALSE)
             {
-                if ($line_quiz[2] == "1")
+                if ($line_quiz[2] == "1" && $line_quiz[1] !== "Quiz")
                 {
-                    if ($line_quiz[1] == "Quiz")
-                    {
-                        echo '';
-
-                    } else {
-                        echo "<li>$line_quiz[1]</li>";
-                        echo "<form method='POST'>";
-                        echo "<input type='hidden' name='id_quiz' value='$line_quiz[3]'>";
-                        echo "<button type='submit' name='toggle'>Deactivate</button>";
-                        echo "</form>";
-                    }
+                    echo "<li>$line_quiz[1]</li>";
+                    echo "<form method='POST'>";
+                    echo "<input type='hidden' name='id_quiz' value='$line_quiz[3]'>";
+                    echo "<button type='submit' name='toggle'>Deactivate</button>";
+                    echo "</form>";
                 }
                 if ($line_quiz[2] == "0")
                 {
@@ -157,6 +151,8 @@ if(isset($_SESSION['admin']))
             fclose($file_open_quiz);
             ?>
         </ul>
+
+        <h2>State of the Quiz</h2>
         </div>
     </body>
     </html><?php

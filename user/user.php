@@ -33,7 +33,6 @@ if ($_SESSION['rôle'] == 'User')
                 $line[1] = ($line[1] == $_SESSION["lastname"]) ? $_POST["change_lastname"] : $_SESSION["lastname"];
                 $line[2] = ($line[2] == $_SESSION["firstname"]) ? $_POST["change_firstname"] : $_SESSION["firstname"];
                 $line[3] = ($line[3] == $_SESSION["id"]) ? $_POST["change_id"] : $_SESSION["id"];
-                // $line[4] = $_SESSION["password"];
                 $line[4] = ($line[4] == $_SESSION["password"]) ? password_hash($_POST['change_password'], PASSWORD_DEFAULT) : $_SESSION["password"];
                 $line[6] = ($line[6] == $_SESSION["email"]) ? $_POST["change_email"] : $_SESSION["email"];
                 
@@ -70,8 +69,8 @@ if ($_SESSION['rôle'] == 'User')
         First Name: <input type="text" name="change_firstname" value="<?php echo $_SESSION["firstname"]; ?>"><br>
         Last Name: <input type="text" name="change_lastname" value="<?php echo $_SESSION["lastname"]; ?>"><br>
         ID: <input type="text" name="change_id" value="<?php echo $_SESSION["id"]; ?>"><br>
-        Password: <input type="password" name="change_password" value=""><br>
         Email: <input type="email" name="change_email" value="<?php echo $_SESSION["email"]; ?>"><br>
+        Password: <input type="password" name="change_password" value=""><br>
         <input type="submit" value="Update information">
     </form>
 </body>

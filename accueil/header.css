@@ -37,6 +37,7 @@ nav ul li{
 }
 nav ul li a{
     text-decoration: none;
+    color: inherit;
 }
  
 a {
@@ -45,37 +46,126 @@ a {
 }
  
  
- 
-.home{
+.home {
+    position: relative;
     color: rgb(125, 85, 255);
 }
-.home:hover{
-    background-color: rgb(125, 85, 255);
-    color: white;
-    border-radius: 5px;
+
+.Dashboard {
+    position: relative;
+    color:cadetblue;
 }
+ 
+.Dashboard::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
+    background-color:cadetblue;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+
+.home::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
+    background-color: rgb(125, 85, 255);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+
+.Admin::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
+    background-color: rgb(125, 85, 255);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+ 
+.button:hover::after {
+    transform: scaleX(1);
+}
+ 
 .myquizz{
     color: rgb(255, 85, 85);
+    position: relative;
 }
-.myquizz:hover{
+ 
+.myquizz::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
     background-color: rgb(255, 85, 85);
-    color: white;
-    border-radius: 5px;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
 }
+ 
+.myquizz:hover::after{
+    transform: scaleX(1);
+}
+ 
+ 
 .create{
     color: rgb(255, 218, 85);
+    position: relative;
 }
-.create:hover{
-    background-color: rgb(255, 218, 85) ;
-    color: white;
-    border-radius: 5px;
+.create::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
+    background-color: rgb(255, 218, 85);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
    
 }
+ 
+.create:hover::after {
+    transform: scaleX(1);
+}
+ 
+ 
 .Admin{
     color: rgb(111, 111, 111);
+    position: relative;
 }
-.Admin:hover{
-    color: black;
+ 
+ 
+.Admin::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
+    background-color: rgb(111, 111, 111);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+}
+ 
+.Admin:hover::after{
+    transform: scaleX(1);
 }
  
  

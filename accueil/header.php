@@ -21,31 +21,31 @@ $user_id = isset($_SESSION['id']);
                 </a>
             </div>
             <ul>
-                <li class='home'><a href="../accueil/accueil.php">Home</a></li>
+                <li class='home button'><a href="../accueil/accueil.php">Home</a></li>
                 <?php
                 if (isset($_SESSION["rôle"]))
                 {
                     if ($_SESSION['rôle'] == 'Admin')
                     {?>
-                        <li class='Admin'><a class='Admin' href="../admin/admin.php">Admin</a></li><?php
+                        <li class='Admin button'><a class='Admin' href="../admin/admin.php">Admin</a></li><?php
                     }
                     if ($_SESSION['rôle'] == 'School')
                     {?>
-                        <li class='Admin'><a class='Admin' href="../school/school.php">School</a></li><?php
+                        <li class='Admin button'><a class='Admin' href="../school/school.php">School</a></li><?php
                     }
                     if ($_SESSION['rôle'] == 'Company')
                     {?>
-                        <li class='Admin'><a class='Admin' href="../company/company.php">Company</a></li><?php
+                        <li class='Admin button'><a class='Admin' href="../company/company.php">Company</a></li><?php
                     }
                     if ($_SESSION["rôle"] == 'School' || $_SESSION["rôle"] == 'Company')
                     {?>
-                        <li class='myquizz'><a href="../quiz/myquiz.php">My Quizz</a></li>
-                        <li class='create'><a class="quiz" href="../quiz/quiz.php">Create</a></li><?php
+                        <li class='myquizz button'><a href="../quiz/myquiz.php">My Quizz</a></li>
+                        <li class='create button'><a class="quiz" href="../quiz/quiz.php">Create</a></li><?php
                     }
                     if ($_SESSION["rôle"] == 'User')
                     {?>
-                        <li class='myquizz'><a href="../quiz/myquiz.php">Play</a></li>
-                        <li class='Dashboard'><a href="../user/user.php">Dashboard</a></li><?php
+                        <li class='myquizz button'><a href="../quiz/myquiz.php">Play</a></li>
+                        <li class='Dashboard button'><a href="../user/user.php">Dashboard</a></li><?php
                     }
                 }?>
             </ul>
