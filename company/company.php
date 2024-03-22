@@ -17,8 +17,8 @@ $file = fopen($file_name,'r');
         <h1>Data Company</h1>
         <?php
         while (($line = fgetcsv($file)) !== false) {
-            if (isset($line[0])){
-                echo"<h2>L'utilisateur $line[1] à fait le quiz $line[2] et à obtenu le score de $line[3] / $line[4]</h2>";
+            if (isset($line[0]) && $line !== 'School'){
+                echo"<h2>L'utilisateur $line[1] à fait le quiz $line[2] et à obtenu le score de $line[3]</h2>";
             }
         }
         ?>
